@@ -118,7 +118,7 @@ export function calculateConfidenceScore(answers: UserAnswers): number {
   else if (answers.budget.includes("₹1,500")) score += 5;
 
   // Specific goal = higher confidence
-  if (answers.goalType && answers.goalType !== "") score += 5;
+  if (answers.goalType && (answers.goalType as string) === "") score += 5;
 
   return Math.min(score, 95); // Cap at 95
 }
