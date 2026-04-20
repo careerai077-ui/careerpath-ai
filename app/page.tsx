@@ -75,11 +75,10 @@ export default function HomePage() {
     }
   };
 
-  const handleSave = (r: ReturnType<typeof roadmap>) => {
-    if (!r) return;
-    saveRoadmap(r);
-    track(Events.ROADMAP_SAVED, { career: r.careerLabel });
-  };
+  const handleSave = (r: any) => {
+  if (!r) return;
+  saveRoadmap(r);
+}
 
   const handleBack = () => {
     reset();
