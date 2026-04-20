@@ -15,7 +15,7 @@ import { Button, Badge, GlassCard, StatCard, EmptyState, SkeletonCard, Chip } fr
 import {
   useRoadmapGeneration, useSavedRoadmaps, useUserProfile, useDebounce,
 } from "@/hooks";
-import type { CareerData, UserAnswers } from "@/types";
+import type { CareerData, UserAnswers, GeneratedRoadmap } from "@/types";
 import { cn } from "@/utils";
 import { track, Events } from "@/lib/analytics";
 
@@ -75,7 +75,7 @@ export default function HomePage() {
     }
   };
 
-  const handleSave = (r: any) => {
+  const handleSave = (r: GeneratedRoadmap) => {
   if (!r) return;
   saveRoadmap(r);
 }
